@@ -1,0 +1,9 @@
+{
+	"name": "adf-blob-csv",
+	"location": "eastus",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "97f5b9e1-1fc2-4454-8674-fbcd093b23b4",
+		"tenantId": "2800c0a0-70e9-49be-8733-faeaa6aced99"
+	}
+}
