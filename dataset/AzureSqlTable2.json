@@ -6,12 +6,6 @@
 			"type": "LinkedServiceReference"
 		},
 		"parameters": {
-			"sheet1": {
-				"type": "String"
-			},
-			"sh": {
-				"type": "String"
-			},
 			"tablename": {
 				"type": "String"
 			}
