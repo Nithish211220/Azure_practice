@@ -1,0 +1,24 @@
+{
+	"name": "SQLTB_Q1",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LS_SQL_2",
+			"type": "LinkedServiceReference"
+		},
+		"parameters": {
+			"source": {
+				"type": "string"
+			}
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [],
+		"typeProperties": {
+			"schema": "",
+			"table": {
+				"value": "@dataset().source",
+				"type": "Expression"
+			}
+		}
+	}
+}
