@@ -63,7 +63,7 @@
 							},
 							"inputs": [
 								{
-									"referenceName": "DelimitedText2",
+									"referenceName": "Source_csv",
 									"type": "DatasetReference",
 									"parameters": {
 										"source": {
