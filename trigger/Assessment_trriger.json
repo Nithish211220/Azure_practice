@@ -1,0 +1,24 @@
+{
+	"name": "Assessment_trriger",
+	"properties": {
+		"annotations": [],
+		"runtimeState": "Started",
+		"pipelines": [
+			{
+				"pipelineReference": {
+					"referenceName": "Assessment q1",
+					"type": "PipelineReference"
+				}
+			}
+		],
+		"type": "ScheduleTrigger",
+		"typeProperties": {
+			"recurrence": {
+				"frequency": "Minute",
+				"interval": 15,
+				"startTime": "2025-03-06T08:00:00",
+				"timeZone": "India Standard Time"
+			}
+		}
+	}
+}
