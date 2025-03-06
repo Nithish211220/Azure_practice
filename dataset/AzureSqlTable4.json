@@ -1,0 +1,24 @@
+{
+	"name": "AzureSqlTable4",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LS_SQL_2",
+			"type": "LinkedServiceReference"
+		},
+		"parameters": {
+			"sink": {
+				"type": "string"
+			}
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [],
+		"typeProperties": {
+			"schema": "",
+			"table": {
+				"value": "@dataset().sink",
+				"type": "Expression"
+			}
+		}
+	}
+}
