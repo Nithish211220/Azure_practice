@@ -1,0 +1,237 @@
+{
+	"$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"type": "string",
+			"metadata": "Data Factory name",
+			"defaultValue": "adf-blob-csv"
+		},
+		"AzureBlobStorage1_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'AzureBlobStorage1'"
+		},
+		"AzureBlobStorage2_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'AzureBlobStorage2'"
+		},
+		"AzureBlobStorage3_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'AzureBlobStorage3'"
+		},
+		"AzureBlobStorage4_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'AzureBlobStorage4'"
+		},
+		"AzureSqlDatabase1_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'AzureSqlDatabase1'"
+		},
+		"LS_BLOB_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'LS_BLOB'"
+		},
+		"LS_BLOB_2_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'LS_BLOB_2'"
+		},
+		"LS_SQL_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'LS_SQL'"
+		},
+		"LS_SQL_2_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'LS_SQL_2'"
+		},
+		"RestService1_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'RestService1'"
+		},
+		"db_assessment_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'db_assessment'"
+		},
+		"AzureSqlDatabase1_properties_typeProperties_server": {
+			"type": "string",
+			"defaultValue": "sql-server-adf-1.database.windows.net"
+		},
+		"AzureSqlDatabase1_properties_typeProperties_database": {
+			"type": "string",
+			"defaultValue": "orders_db"
+		},
+		"AzureSqlDatabase1_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "nithish"
+		},
+		"LS_SQL_properties_typeProperties_server": {
+			"type": "string",
+			"defaultValue": "sql-server-2003.database.windows.net"
+		},
+		"LS_SQL_properties_typeProperties_database": {
+			"type": "string",
+			"defaultValue": "order_db"
+		},
+		"LS_SQL_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "Nithish@21"
+		},
+		"LS_SQL_2_properties_typeProperties_server": {
+			"type": "string",
+			"defaultValue": "adfpracticeserversql.database.windows.net"
+		},
+		"LS_SQL_2_properties_typeProperties_database": {
+			"type": "string",
+			"defaultValue": "MYSQL_DB"
+		},
+		"LS_SQL_2_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "nithish"
+		},
+		"RestService1_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://jsonplaceholder.typicode.com/users"
+		},
+		"RestService1_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "Nithish@21"
+		},
+		"db_assessment_properties_typeProperties_server": {
+			"type": "string",
+			"defaultValue": "adfpracticeserversql.database.windows.net"
+		},
+		"db_assessment_properties_typeProperties_database": {
+			"type": "string",
+			"defaultValue": "MYSQL_DB"
+		},
+		"db_assessment_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "Nithish@21"
+		},
+		"containerUri": {
+			"type": "string",
+			"metadata": "URI to storage account containing linked ARM templates"
+		},
+		"containerSasToken": {
+			"type": "string",
+			"metadata": "Sas token to storage account containing linked ARM templates"
+		}
+	},
+	"variables": {
+		"factoryId": "[concat('Microsoft.DataFactory/factories/', parameters('factoryName'))]"
+	},
+	"resources": [
+		{
+			"name": "adf-blob-csv_ArmTemplate_0",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2024-03-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_0.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					},
+					"AzureBlobStorage1_connectionString": {
+						"value": "[parameters('AzureBlobStorage1_connectionString')]"
+					},
+					"AzureBlobStorage2_connectionString": {
+						"value": "[parameters('AzureBlobStorage2_connectionString')]"
+					},
+					"AzureBlobStorage3_connectionString": {
+						"value": "[parameters('AzureBlobStorage3_connectionString')]"
+					},
+					"AzureBlobStorage4_connectionString": {
+						"value": "[parameters('AzureBlobStorage4_connectionString')]"
+					},
+					"AzureSqlDatabase1_password": {
+						"value": "[parameters('AzureSqlDatabase1_password')]"
+					},
+					"LS_BLOB_connectionString": {
+						"value": "[parameters('LS_BLOB_connectionString')]"
+					},
+					"LS_BLOB_2_connectionString": {
+						"value": "[parameters('LS_BLOB_2_connectionString')]"
+					},
+					"LS_SQL_password": {
+						"value": "[parameters('LS_SQL_password')]"
+					},
+					"LS_SQL_2_password": {
+						"value": "[parameters('LS_SQL_2_password')]"
+					},
+					"RestService1_password": {
+						"value": "[parameters('RestService1_password')]"
+					},
+					"db_assessment_password": {
+						"value": "[parameters('db_assessment_password')]"
+					},
+					"AzureSqlDatabase1_properties_typeProperties_server": {
+						"value": "[parameters('AzureSqlDatabase1_properties_typeProperties_server')]"
+					},
+					"AzureSqlDatabase1_properties_typeProperties_database": {
+						"value": "[parameters('AzureSqlDatabase1_properties_typeProperties_database')]"
+					},
+					"AzureSqlDatabase1_properties_typeProperties_userName": {
+						"value": "[parameters('AzureSqlDatabase1_properties_typeProperties_userName')]"
+					},
+					"LS_SQL_properties_typeProperties_server": {
+						"value": "[parameters('LS_SQL_properties_typeProperties_server')]"
+					},
+					"LS_SQL_properties_typeProperties_database": {
+						"value": "[parameters('LS_SQL_properties_typeProperties_database')]"
+					},
+					"LS_SQL_properties_typeProperties_userName": {
+						"value": "[parameters('LS_SQL_properties_typeProperties_userName')]"
+					},
+					"LS_SQL_2_properties_typeProperties_server": {
+						"value": "[parameters('LS_SQL_2_properties_typeProperties_server')]"
+					},
+					"LS_SQL_2_properties_typeProperties_database": {
+						"value": "[parameters('LS_SQL_2_properties_typeProperties_database')]"
+					},
+					"LS_SQL_2_properties_typeProperties_userName": {
+						"value": "[parameters('LS_SQL_2_properties_typeProperties_userName')]"
+					},
+					"RestService1_properties_typeProperties_url": {
+						"value": "[parameters('RestService1_properties_typeProperties_url')]"
+					},
+					"RestService1_properties_typeProperties_userName": {
+						"value": "[parameters('RestService1_properties_typeProperties_userName')]"
+					},
+					"db_assessment_properties_typeProperties_server": {
+						"value": "[parameters('db_assessment_properties_typeProperties_server')]"
+					},
+					"db_assessment_properties_typeProperties_database": {
+						"value": "[parameters('db_assessment_properties_typeProperties_database')]"
+					},
+					"db_assessment_properties_typeProperties_userName": {
+						"value": "[parameters('db_assessment_properties_typeProperties_userName')]"
+					}
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "adf-blob-csv_ArmTemplate_1",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2024-03-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_1.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					}
+				}
+			},
+			"dependsOn": [
+				"[resourceId('Microsoft.Resources/deployments', 'adf-blob-csv_ArmTemplate_0')]"
+			]
+		}
+	]
+}

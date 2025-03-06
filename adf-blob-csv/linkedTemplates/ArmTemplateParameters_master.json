@@ -1,0 +1,90 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"value": "adf-blob-csv"
+		},
+		"AzureBlobStorage1_connectionString": {
+			"value": ""
+		},
+		"AzureBlobStorage2_connectionString": {
+			"value": ""
+		},
+		"AzureBlobStorage3_connectionString": {
+			"value": ""
+		},
+		"AzureBlobStorage4_connectionString": {
+			"value": ""
+		},
+		"AzureSqlDatabase1_password": {
+			"value": ""
+		},
+		"LS_BLOB_connectionString": {
+			"value": ""
+		},
+		"LS_BLOB_2_connectionString": {
+			"value": ""
+		},
+		"LS_SQL_password": {
+			"value": ""
+		},
+		"LS_SQL_2_password": {
+			"value": ""
+		},
+		"RestService1_password": {
+			"value": ""
+		},
+		"db_assessment_password": {
+			"value": ""
+		},
+		"AzureSqlDatabase1_properties_typeProperties_server": {
+			"value": "sql-server-adf-1.database.windows.net"
+		},
+		"AzureSqlDatabase1_properties_typeProperties_database": {
+			"value": "orders_db"
+		},
+		"AzureSqlDatabase1_properties_typeProperties_userName": {
+			"value": "nithish"
+		},
+		"LS_SQL_properties_typeProperties_server": {
+			"value": "sql-server-2003.database.windows.net"
+		},
+		"LS_SQL_properties_typeProperties_database": {
+			"value": "order_db"
+		},
+		"LS_SQL_properties_typeProperties_userName": {
+			"value": "Nithish@21"
+		},
+		"LS_SQL_2_properties_typeProperties_server": {
+			"value": "adfpracticeserversql.database.windows.net"
+		},
+		"LS_SQL_2_properties_typeProperties_database": {
+			"value": "MYSQL_DB"
+		},
+		"LS_SQL_2_properties_typeProperties_userName": {
+			"value": "nithish"
+		},
+		"RestService1_properties_typeProperties_url": {
+			"value": "https://jsonplaceholder.typicode.com/users"
+		},
+		"RestService1_properties_typeProperties_userName": {
+			"value": "Nithish@21"
+		},
+		"db_assessment_properties_typeProperties_server": {
+			"value": "adfpracticeserversql.database.windows.net"
+		},
+		"db_assessment_properties_typeProperties_database": {
+			"value": "MYSQL_DB"
+		},
+		"db_assessment_properties_typeProperties_userName": {
+			"value": "Nithish@21"
+		},
+		"containerUri": {
+			"value": ""
+		},
+		"containerSasToken": {
+			"value": ""
+		}
+	}
+}
